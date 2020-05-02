@@ -1,13 +1,13 @@
 # Introduction to Mutation Testing
 
-## Step 1
+## Step 2
 
-Let us start by writing a simple palindrome test. A palindrome is a word or sentence that reads the same backawards and forwards, for example, "noon". Let us do test driven development, and follow industry best practices. 
+In Step 2, we have implemented the palindrome function. Please take a look at [`Palindrome.java`](https://github.com/sualeh/introduction-to-mutation-testing/blob/master/src/test/java/us/fatehi/palindrome/Palindrome.java). Now if you run with `mvn clean test`, all the tests will pass. 
 
-We will start by writing the unit tests first. Please take a look at [`PalindromeTest.java`](https://github.com/sualeh/introduction-to-mutation-testing/blob/master/src/test/java/us/fatehi/palindrome/PalindromeTest.java). There are tests for edge cases, and we consider null to be a palindrome for this purpose. There are edge condition tests for an empty string, and a word with a single letter. There is a happy path test for "noon", and a negative test for "morning" which is not a palindrome.
+In fact, we have done a pretty good job of covering edge cases, and so let us confirm that we have 100% test coverage. Open up the test coverage report, which is in `./target/site/jacoco/index.html`, in a browser, and you will see that we have covered all the code.
 
-Download the code, and run it with `mvn clean test`. You will notice that all our tests are failing because the code has not been implemented yet. In the next step, we will implement the code, and get the tests to pass.
+However, do you notice a problem? The test coverage report shows some missed logic branches. If you dig deeper, you will find we have not covered the full truth table for `&&` on line #18. It is time to add some more tests.
 
-## Move to Step 2
+## Move to Step 3
 
-In order to move to Step 2, checkout git branch `step2` by running `git checkout step2`.
+In order to move to Step 3, checkout git branch `step3` by running `git checkout step3`.
