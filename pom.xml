@@ -30,6 +30,34 @@
   </dependencies>
 
   <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.pitest</groupId>
+          <artifactId>pitest-maven</artifactId>
+          <version>1.5.1</version>
+          <dependencies>
+            <dependency>
+              <groupId>org.pitest</groupId>
+              <artifactId>pitest-junit5-plugin</artifactId>
+              <version>0.12</version>
+            </dependency>
+          </dependencies>
+          <configuration>
+            <failWhenNoMutations>false</failWhenNoMutations>
+            <exportLineCoverage>true</exportLineCoverage>
+            <timestampedReports>false</timestampedReports>
+            <mutators>
+              <mutator>DEFAULTS</mutator>
+            </mutators>
+            <outputFormats>
+              <value>XML</value>
+              <value>HTML</value>
+            </outputFormats>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
