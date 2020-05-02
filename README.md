@@ -2,7 +2,7 @@
 
 ## Step 2
 
-In Step 2, we have implemented the palindrome function. Please take a look at [`Palindrome.java`](https://github.com/sualeh/introduction-to-mutation-testing/blob/master/src/test/java/us/fatehi/palindrome/Palindrome.java). Now if you run with `mvn clean test`, all the tests will pass. 
+In Step 2, we have implemented the palindrome function. Please take a look at [`Palindrome.java`](https://github.com/sualeh/introduction-to-mutation-testing/blob/step2/src/main/java/us/fatehi/palindrome/Palindrome.java). Now if you run with `mvn clean test`, all the tests will pass. 
 
 In fact, we have done a pretty good job of covering edge cases, and so let us confirm that we have 100% test coverage. Open up the test coverage report, which is in `./target/site/jacoco/index.html`, in a browser, and you will see that we have covered all the code.
 
