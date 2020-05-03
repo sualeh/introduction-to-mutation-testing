@@ -12,21 +12,9 @@ public class MorePalindromeTest
   private final Palindrome p = new Palindrome();
 
   @Test
-  public void happyPathOuterPalindrome()
+  public void almostPalindrome()
   {
     assertFalse(p.isPalindrome("streets"));
-  }
-
-  @Test
-  public void happyPathOddLetters()
-  {
-    assertTrue(p.isPalindrome("racecar"));
-  }
-
-  @Test
-  public void negativeCaseEvenLetters()
-  {
-    assertFalse(p.isPalindrome("tracks"));
   }
 
 }

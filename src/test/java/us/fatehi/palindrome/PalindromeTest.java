@@ -30,15 +30,21 @@ public class PalindromeTest
   }
 
   @Test
-  public void happyPath()
+  public void happyPathEvenLetters()
   {
     assertTrue(p.isPalindrome("noon"));
   }
 
   @Test
+  public void happyPathOddLetters()
+  {
+    assertTrue(p.isPalindrome("racecar"));
+  }
+
+  @Test
   public void negativeCase()
   {
-    assertFalse(p.isPalindrome("morning"));
+    assertFalse(p.isPalindrome("burning"));
   }
 
 }
