@@ -10,6 +10,10 @@ So, we are done? Not so fast! This is where mutation testing comes in to show us
 
 Let us run PIT, and check the results. Run `mvn clean test org.pitest:pitest-maven:mutationCoverage`. Then open the results in `./target/pit-reports/index.html` in a browser. PIT shows 100% test coverage, but only 89% mutation test coverage. Let us explore and fix this.
 
+If you dig further, you will find that not all mutations were killed by tests. We are clearly missing a test condition. If you look at the report for line #9, you will see that when the conditional boundary was changed, no tests failed. 
+
+Leave your browser with the mutation testing results up, and move to Step 4.
+
 ## Move to Step 4
 
 In order to move to Step 4, checkout git branch `step4` by running `git checkout step4`.
