@@ -12,33 +12,9 @@ public class PalindromeTest
   private final Palindrome p = new Palindrome();
 
   @Test
-  public void edgeCaseNull()
-  {
-    assertTrue(p.isPalindrome(null));
-  }
-
-  @Test
-  public void edgeCaseEmptyString()
-  {
-    assertTrue(p.isPalindrome(""));
-  }
-
-  @Test
-  public void happyPathSingleLetter()
-  {
-    assertTrue(p.isPalindrome("a"));
-  }
-
-  @Test
   public void happyPath()
   {
     assertTrue(p.isPalindrome("noon"));
-  }
-
-  @Test
-  public void negativeCase()
-  {
-    assertFalse(p.isPalindrome("morning"));
   }
 
 }
