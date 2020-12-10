@@ -16,7 +16,7 @@ But how do we ensure that are tests are sufficient?
 - Mutation testing
 
 
-## What is Mutation Testing
+## What is Mutation Testing?
 
 - Measures the quality of the software tests themselves
 - Idea proposed by Richard Lipton in 1971
