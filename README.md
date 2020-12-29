@@ -9,6 +9,7 @@ Most developers are familiar with the concept of unit testing, and how this is u
 This tutorial explores how mutation testing works. We will do test-driven development of a simple palindrome function, and follow it through code coverage with Jacoco and mutation testing with PIT. Start by reading the [brief overview of mutation testing](mutation-testing.md) included in this tutorial. Read the README file for instructions at each step.
 
 *Expected time to complete tutorial: 30 minutes*
+**Watch a [video of this tutorial on YouTube](https://youtu.be/1ljrGdXuv_g).**
 
 
 ## Getting Started
