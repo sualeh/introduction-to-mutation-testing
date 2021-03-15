@@ -1,4 +1,4 @@
-> Please support this project by putting a star on it
+> **Please support this project by putting a :star: on it**
 
 # Introduction to Mutation Testing
 
