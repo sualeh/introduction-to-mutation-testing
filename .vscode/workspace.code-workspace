@@ -14,6 +14,10 @@
     "editor.tabSize":2,
     "editor.foldingImportsByDefault": true,
     "files.trimTrailingWhitespace":true,
-    "git.enableCommitSigning":true
+    "git.enableCommitSigning": true,
+    "workbench.editor.enablePreview": false,
+    "workbench.editorAssociations": {
+      "*.md": "vscode.markdown.preview.editor"
+    },
   }
 }
