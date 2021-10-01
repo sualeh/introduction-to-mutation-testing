@@ -5,6 +5,6 @@
 		"bpruitt-goddard.mermaid-markdown-syntax-highlighting",
 		"editorconfig.editorconfig",
 		"vscjava.vscode-java-pack",
-		"analytic-signal.preview-html"
+		"ms-vscode.live-server"
 	]
 }
