@@ -1,1 +1,10 @@
-
+{
+    "recommendations": [
+        "bierner.markdown-emoji",
+        "mdickin.markdown-shortcuts",
+        "bpruitt-goddard.mermaid-markdown-syntax-highlighting",
+        "editorconfig.editorconfig",
+        "vscjava.vscode-java-pack",
+        "ms-vscode.live-server"
+    ]
+}
