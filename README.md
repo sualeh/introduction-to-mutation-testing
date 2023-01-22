@@ -1,4 +1,4 @@
-> Please support this project by putting a star on it
+> **Note**: Please support this project by putting a :star: on it
 
 # Introduction to Mutation Testing
 
@@ -12,4 +12,4 @@ Download the code, and run it with `mvn clean test`. You will notice that all ou
 
 ## Move to Step 2
 
-In order to move to Step 2, checkout git branch `step2` by running `git checkout step2`.
+In order to move to Step 2, switch to git branch "step2" by running `git switch step2`. Then follow instructions in the README.
