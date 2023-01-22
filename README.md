@@ -1,4 +1,4 @@
-> Please support this project by putting a star on it
+> **Note**: Please support this project by putting a :star: on it
 
 # Introduction to Mutation Testing
 
@@ -18,4 +18,4 @@ Leave your browser with the mutation testing results up, and move to Step 4.
 
 ## Move to Step 4
 
-In order to move to Step 4, checkout git branch `step4` by running `git checkout step4`.
+In order to move to Step 4, switch to git branch "step4" by running `git switch step4`. Then follow instructions in the README.
