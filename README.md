@@ -1,4 +1,4 @@
-> Please support this project by putting a star on it
+> **Note**: Please support this project by putting a :star: on it
 
 # Introduction to Mutation Testing
 
@@ -12,4 +12,4 @@ However, do you notice a problem? The test coverage report shows some missed log
 
 ## Move to Step 3
 
-In order to move to Step 3, checkout git branch `step3` by running `git checkout step3`.
+In order to move to Step 3, switch to git branch "step3" by running `git switch step3`. Then follow instructions in the README.
