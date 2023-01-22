@@ -1,4 +1,4 @@
-> **Please support this project by putting a :star: on it**
+> **Note**: Please support this project by putting a :star: on it
 
 # Introduction to Mutation Testing
 
@@ -19,4 +19,4 @@ Follow along this tutorial. You will need to have at least [Java 8](https://www.
 
 ## Move to Step 1
 
-In order to move to Step 1, checkout git branch `step1` by running `git checkout step1`.
+In order to move to Step 1, switch to git branch "step1" by running `git switch step1`. Then follow instructions in the README.
