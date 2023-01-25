@@ -1,0 +1,65 @@
+name: Build and Deploy Slides
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build Slides
+    runs-on: windows-latest
+
+    steps:
+
+    - id: checkout-code
+      name: Checkout
+      uses: actions/checkout@v3
+
+    - id: marp-build
+      name: Render Slides with Marp
+      shell: pwsh
+      run: |
+        # Install Scoop
+        Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+        iex "& {$(irm get.scoop.sh)} -RunAsAdmin"
+        scoop update
+        scoop -v
+        # Install Marp
+        scoop install marp
+        marp -v
+        # Generate slides
+        marp --allow-local-files --html -I ./src/main/slides/ -o ./bin/slides --pdf
+
+    - id: configure-pages
+      name: Setup Pages
+      uses: actions/configure-pages@v2
+
+    - id: upload-artifact
+      name: Upload artifact
+      uses: actions/upload-pages-artifact@v1
+      with:
+        path: ./bin/slides
+
+
+  deploy:
+    name: Deploy Website
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy-pages.outputs.page_url }}
+    needs: build
+
+    steps:
+
+    - id: deploy-pages
+      name: Deploy to GitHub Pages
+      uses: actions/deploy-pages@v1

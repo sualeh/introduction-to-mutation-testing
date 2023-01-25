@@ -8,7 +8,7 @@ Most developers are familiar with the concept of unit testing, and how this is u
 
 [Mutation testing](https://en.wikipedia.org/wiki/Mutation_testing) helps ensure that that tests themselves are of high quality by introducing random bugs, or mutations, and checking if any of unit tests can catch the bug. While this concept has been around for a while, it is just recently that good tools are becoming available for this purpose. One such tool is [PIT](https://pitest.org/).
 
-This tutorial explores how mutation testing works. We will do test-driven development of a simple palindrome function, and follow it through code coverage with Jacoco and mutation testing with PIT. Start by reading the [brief overview of mutation testing](mutation-testing.md) included in this tutorial. Read the README file for instructions at each step.
+This tutorial explores how mutation testing works. We will do test-driven development of a simple palindrome function, and follow it through code coverage with Jacoco and mutation testing with PIT. Start by reading the [brief overview of mutation testing](src/main/slides/mutation-testing.md) included in this tutorial. Read the README file for instructions at each step.
 
 *Expected time to complete tutorial: 30 minutes*
 
