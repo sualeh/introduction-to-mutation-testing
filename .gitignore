@@ -15,6 +15,9 @@ bin/
 .idea/
 **/*.iml
 
+# Visual Studio Code
+.vscode/
+
 *.patch
 .clover
 .svn
