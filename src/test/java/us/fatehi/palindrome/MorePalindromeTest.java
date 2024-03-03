@@ -10,7 +10,7 @@ public class MorePalindromeTest {
 
   @Test
   public void almostPalindrome() {
-    assertFalse(p.isPalindrome("streets"));
+    assertFalse(p.isPalindrome("polyp"));
   }
 
 }
