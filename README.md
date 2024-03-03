@@ -1,4 +1,4 @@
-> **Note**: Please support this project by putting a :star: on it
+> **:star: Star it :arrow_heading_up: if you love it!**
 
 # Introduction to Mutation Testing
 
