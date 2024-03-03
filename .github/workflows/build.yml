@@ -1,0 +1,96 @@
+name: Build All Branches
+
+on:
+  workflow_dispatch:
+  push:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-main:
+    name: Build "main"
+    runs-on: ubuntu-latest
+    steps:
+    - id: prepare-maven-build
+      name: Prepare Maven build
+      uses: sualeh/prepare-maven-build@v1.4.0
+      with:
+        checkout-branch: main
+    - id: build
+      name: Build
+      run: |
+        # Build
+        mvn \
+          --no-transfer-progress \
+          --batch-mode \
+          compile
+  build-step1:
+    name: Build "step1"
+    runs-on: ubuntu-latest
+    steps:
+    - id: prepare-maven-build
+      name: Prepare Maven build
+      uses: sualeh/prepare-maven-build@v1.4.0
+      with:
+        checkout-branch: step1
+    - id: build
+      name: Build
+      run: |
+        # Build
+        mvn \
+          --no-transfer-progress \
+          --batch-mode \
+          compile
+  build-step2:
+    name: Build "step2"
+    runs-on: ubuntu-latest
+    steps:
+    - id: prepare-maven-build
+      name: Prepare Maven build
+      uses: sualeh/prepare-maven-build@v1.4.0
+      with:
+        checkout-branch: step2
+    - id: build
+      name: Build and run tests
+      run: |
+        # Build and run tests
+        mvn \
+          --no-transfer-progress \
+          --batch-mode \
+          test
+  build-step3:
+    name: Build "step3"
+    runs-on: ubuntu-latest
+    steps:
+    - id: prepare-maven-build
+      name: Prepare Maven build
+      uses: sualeh/prepare-maven-build@v1.4.0
+      with:
+        checkout-branch: step3
+    - id: build
+      name: Build and run tests
+      run: |
+        # Build and run tests
+        mvn \
+          --no-transfer-progress \
+          --batch-mode \
+          test
+  build-step4:
+    name: Build "step4"
+    runs-on: ubuntu-latest
+    steps:
+    - id: prepare-maven-build
+      name: Prepare Maven build
+      uses: sualeh/prepare-maven-build@v1.4.0
+      with:
+        checkout-branch: step4
+    - id: build
+      name: Build and run tests
+      run: |
+        # Build and run tests
+        mvn \
+          --no-transfer-progress \
+          --batch-mode \
+          test
