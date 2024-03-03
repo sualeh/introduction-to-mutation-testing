@@ -22,7 +22,7 @@ jobs:
 
     - id: checkout-code
       name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - id: marp-build
       name: Render Slides with Marp
