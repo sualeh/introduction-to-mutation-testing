@@ -33,13 +33,14 @@ _class:
 - *Unit and functional testing* validates software **works as designed**
 - *Regression testing* validates that software **still works after changes**
 
-But how do we ensure that are tests are sufficient?
+But how do we ensure that our tests are sufficient?
 
 
 ## Ensuring That Tests are Sufficient
 
 - Creating test plans with the team
-- Measuring code coverage to see how much of the source code is executed during test runs
+- Measuring code coverage 
+  to see how much of the source code is executed during test runs
 - Mutation testing
 
 
@@ -73,3 +74,10 @@ But how do we ensure that are tests are sufficient?
 - **Decision Mutations**: Change decisions or conditions (Boolean and arithmetic operations) to check for design errors
 - **Statement Mutations**: Delete or duplicate statements, like copied and pasted code
 
+
+## Tools
+
+[Awesome Mutation Testing](https://github.com/theofidry/awesome-mutation-testing) has a list of resources
+
+- [Stryker Mutator](https://stryker-mutator.io/) for C# and JavaScript
+- [PIT](https://pitest.org/) for Java
