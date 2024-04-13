@@ -25,5 +25,6 @@
     "markdown.preview.breaks": true,
     "search.useGlobalIgnoreFiles": true,
     "search.useParentIgnoreFiles": true,
-    "java.configuration.updateBuildConfiguration": "automatic"
+    "java.configuration.updateBuildConfiguration": "automatic",
+	"dotnet.defaultSolution": "C#/Palindrome.sln"
 }
