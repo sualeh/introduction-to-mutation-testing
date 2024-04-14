@@ -160,4 +160,5 @@ jobs:
         # .NET build and run tests
         cd C#
         dotnet build
-        dotnet test --verbosity detailed
+        dotnet test --list-tests
+        dotnet test
