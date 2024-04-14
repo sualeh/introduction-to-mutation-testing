@@ -35,7 +35,7 @@ jobs:
     - id: build-dotnet
       name: .NET build and run tests
       run: |
-        # C# build and run tests
+        # .NET build and run tests
         cd C#
         dotnet build
 
@@ -49,9 +49,9 @@ jobs:
       with:
         checkout-branch: step1
     - id: build-java
-      name: Build
+      name: Java build and run tests
       run: |
-        # Build
+        # Java build and run tests
         cd Java
         mvn \
           --no-transfer-progress \
@@ -65,7 +65,7 @@ jobs:
     - id: build-dotnet
       name: .NET build and run tests
       run: |
-        # C# build and run tests
+        # .NET build and run tests
         cd C#
         dotnet build
 
@@ -95,7 +95,7 @@ jobs:
     - id: build-dotnet
       name: .NET build and run tests
       run: |
-        # C# build and run tests
+        # .NET build and run tests
         cd C#
         dotnet build
         dotnet test
@@ -126,7 +126,7 @@ jobs:
     - id: build-dotnet
       name: .NET build and run tests
       run: |
-        # C# build and run tests
+        # .NET build and run tests
         cd C#
         dotnet build
         dotnet test
@@ -157,7 +157,7 @@ jobs:
     - id: build-dotnet
       name: .NET build and run tests
       run: |
-        # C# build and run tests
+        # .NET build and run tests
         cd C#
         dotnet build
-        dotnet test
+        dotnet test --verbosity detailed
