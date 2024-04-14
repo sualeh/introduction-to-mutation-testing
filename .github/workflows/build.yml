@@ -38,6 +38,7 @@ jobs:
         # .NET build and run tests
         cd C#
         dotnet build
+        dotnet test --list-tests
 
   build-step1:
     name: Build "step1"
@@ -68,6 +69,7 @@ jobs:
         # .NET build and run tests
         cd C#
         dotnet build
+        dotnet test --list-tests
 
   build-step2:
     name: Build "step2"
