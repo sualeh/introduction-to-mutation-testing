@@ -13,9 +13,9 @@ jobs:
     name: Build "main"
     runs-on: ubuntu-latest
     steps:
-    - id: prepare-maven-build
+    - id: prepare-java-build
       name: Prepare Maven build
-      uses: sualeh/prepare-maven-build@v1.4.0
+      uses: sualeh/prepare-java-build@v1.4.0
       with:
         checkout-branch: main
     - id: build-java
@@ -31,9 +31,9 @@ jobs:
     name: Build "step1"
     runs-on: ubuntu-latest
     steps:
-    - id: prepare-maven-build
+    - id: prepare-java-build
       name: Prepare Maven build
-      uses: sualeh/prepare-maven-build@v1.4.0
+      uses: sualeh/prepare-java-build@v1.4.0
       with:
         checkout-branch: step1
     - id: build-java
@@ -49,15 +49,15 @@ jobs:
     name: Build "step2"
     runs-on: ubuntu-latest
     steps:
-    - id: prepare-maven-build
+    - id: prepare-java-build
       name: Prepare Maven build
-      uses: sualeh/prepare-maven-build@v1.4.0
+      uses: sualeh/prepare-java-build@v1.4.0
       with:
         checkout-branch: step2
     - id: build-java
-      name: Build and run tests
+      name: Java build and run tests
       run: |
-        # Build and run tests
+        # Java build and run tests
         cd Java
         mvn \
           --no-transfer-progress \
@@ -67,15 +67,15 @@ jobs:
     name: Build "step3"
     runs-on: ubuntu-latest
     steps:
-    - id: prepare-maven-build
+    - id: prepare-java-build
       name: Prepare Maven build
-      uses: sualeh/prepare-maven-build@v1.4.0
+      uses: sualeh/prepare-java-build@v1.4.0
       with:
         checkout-branch: step3
     - id: build-java
-      name: Build and run tests
+      name: Java build and run tests
       run: |
-        # Build and run tests
+        # Java build and run tests
         cd Java
         mvn \
           --no-transfer-progress \
@@ -85,17 +85,29 @@ jobs:
     name: Build "step4"
     runs-on: ubuntu-latest
     steps:
-    - id: prepare-maven-build
+    - id: prepare-java-build
       name: Prepare Maven build
-      uses: sualeh/prepare-maven-build@v1.4.0
+      uses: sualeh/prepare-java-build@v1.4.0
       with:
         checkout-branch: step4
     - id: build-java
-      name: Build and run tests
+      name: Java build and run tests
       run: |
-        # Build and run tests
+        # Java build and run tests
         cd Java
         mvn \
           --no-transfer-progress \
           --batch-mode \
           test
+    - id: prepare-dotnet-build
+      name: Setup dotnet
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '8.0.3'
+    - id: build-dotnet
+      name: .NET build and run tests
+      run: |
+        # C# build and run tests
+        cd C#
+        dotnet build
+        dotnet test
