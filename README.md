@@ -2,20 +2,16 @@
 
 # Introduction to Mutation Testing
 
+> **Watch a [video of this tutorial on YouTube](https://youtu.be/1ljrGdXuv_g).**
+
+Most developers are familiar with the concept of unit testing, and how this is useful to ensure validity of your code, and guard against bugs creeping up in the future. Java developers will typically use [JUnit](https://junit.org/junit5/) to write their unit tests, while C# developers would use [NUnit](https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-nunit). Many projects use test coverage tools such as [Jacoco](https://www.eclemma.org/jacoco/) to ensure that the code as written has tests to validate it. But how strong are the tests? Will they stand up against bugs introduced by future code changes? 
+
+[Mutation testing](https://en.wikipedia.org/wiki/Mutation_testing) helps ensure that that tests themselves are of high quality by introducing random bugs, or mutations, and checking if any of unit tests can catch the bug. While this concept has been around for a while, it is just recently that good tools are becoming available for this purpose. Examples of such tools are [PIT](https://pitest.org/) for Java and [Stryker](https://stryker-mutator.io/docs/stryker-net/introduction/) for C#.
+
+This tutorial explores how mutation testing works. We will do test-driven development of a simple palindrome function, and follow it through code coverage and mutation testing. A Java project with Apache Maven is provided with instructions for Java developers, and a C# solution too. Start by reading the [brief overview of mutation testing](https://sualeh.github.io/introduction-to-mutation-testing/mutation-testing.pdf) included in this tutorial. Read the README file in the corresponding Java or C# for instructions at each step.
+
+*Expected time to complete tutorial: 30 minutes*
+
 ## Step 3
 
-In Step 3, we have added an additional test to covert the missed logic branches. The missing case is where `(firstChar == lastChar) && isPalindrome(center)` is `true && true` meaning that both the first and last characters of the word under test should match, but the next recursion of the function should also match the first and last characters. An example word is "streets", where "st" and "ts" are the reversals of each other. Please take a look at the new test [`MorePalindromeTest.java`](https://github.com/sualeh/introduction-to-mutation-testing/blob/step3/src/test/java/us/fatehi/palindrome/MorePalindromeTest.java). 
-
-Now if you run with `mvn clean test`, all the tests will pass, including the new one. Not only that, the coverage report is clean. If you open up the test coverage report, which is in `./target/site/jacoco/index.html`, in a browser, and you will see that we have covered all the code, including missed branches.
-
-So, we are done? Not so fast! This is where mutation testing comes in to show us if our tests are adequate. A mutation testing tool like [PIT](https://pitest.org/) will introduce random bugs in our code, and see if our tests catch them. The bugs are called mutations, and if the tests fail, the tests are successful in catching the bug, and so the mutation is killed. However, if the tests pass, it means that the mutation is not tested, and the mutation survives (which is not a good thing).
-
-Let us run PIT, and check the results. Run `mvn clean test org.pitest:pitest-maven:mutationCoverage`. Then open the results in `./target/pit-reports/index.html` in a browser. PIT shows 100% test coverage, but only 89% mutation test coverage. Let us explore and fix this.
-
-If you dig further, you will find that not all mutations were killed by tests. We are clearly missing a test condition. If you look at the report for line #9, you will see that when the conditional boundary was changed, no tests failed. 
-
-Leave your browser with the mutation testing results up, and move to Step 4.
-
-## Move to Step 4
-
-In order to move to Step 4, switch to git branch "step4" by running `git switch step4`. Then follow instructions in the README.
+In **Step 3** we will run mutation testing. Please refer to the README files in the C# or the Java folders.
