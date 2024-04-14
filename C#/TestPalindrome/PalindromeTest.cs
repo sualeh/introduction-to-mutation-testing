@@ -5,7 +5,7 @@ namespace us.fatehi.palindrome.test
 {
 
     [TestFixture]
-    public class PalindromeTests
+    public class PalindromeTest
     {
         private readonly Palindrome _p = new Palindrome();
 
