@@ -12,7 +12,7 @@ namespace us.fatehi.palindrome.test
         [Test]
         public void HappyPath()
         {
-            Assert.IsTrue(_p.IsPalindrome("noon"));
+            Assert.That(_p.IsPalindrome("noon"));
         }
     }
 }
