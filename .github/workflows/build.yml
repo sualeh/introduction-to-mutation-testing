@@ -19,16 +19,16 @@ jobs:
       with:
         checkout-branch: main
     - id: build-java
-      name: Build
+      name: Java build and run tests
       run: |
-        # Build
+        # Java build and run tests
         cd Java
         mvn \
           --no-transfer-progress \
           --batch-mode \
           compile
     - id: prepare-dotnet-build
-      name: Setup dotnet
+      name: Prepare .NET build
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 8.x
@@ -59,7 +59,7 @@ jobs:
           --batch-mode \
           compile
     - id: prepare-dotnet-build
-      name: Setup dotnet
+      name: Prepare .NET build
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 8.x
@@ -90,7 +90,7 @@ jobs:
           --batch-mode \
           test
     - id: prepare-dotnet-build
-      name: Setup dotnet
+      name: Prepare .NET build
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 8.x
@@ -122,7 +122,7 @@ jobs:
           --batch-mode \
           test
     - id: prepare-dotnet-build
-      name: Setup dotnet
+      name: Prepare .NET build
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 8.x
@@ -154,7 +154,7 @@ jobs:
           --batch-mode \
           test
     - id: prepare-dotnet-build
-      name: Setup dotnet
+      name: Prepare .NET build
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 8.x
