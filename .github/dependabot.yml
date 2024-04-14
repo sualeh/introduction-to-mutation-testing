@@ -1,45 +1,7 @@
 version: 2
 updates:
-  - package-ecosystem: maven
-    directory: "/"
-    target-branch: main
-    schedule:
-      interval: "weekly"
-      day: "friday"
-    assignees:
-      - sualeh
-  - package-ecosystem: maven
-    directory: "/"
-    target-branch: step1
-    schedule:
-      interval: "weekly"
-      day: "friday"
-    assignees:
-      - sualeh
-  - package-ecosystem: maven
-    directory: "/"
-    target-branch: step2
-    schedule:
-      interval: "weekly"
-      day: "friday"
-    assignees:
-      - sualeh
-  - package-ecosystem: maven
-    directory: "/"
-    target-branch: step3
-    schedule:
-      interval: "weekly"
-      day: "friday"
-    assignees:
-      - sualeh
-  - package-ecosystem: maven
-    directory: "/"
-    target-branch: step4
-    schedule:
-      interval: "weekly"
-      day: "friday"
-    assignees:
-      - sualeh
+
+### GitHub Actions
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
@@ -47,3 +9,92 @@ updates:
       day: "friday"
     assignees:
       - sualeh
+      
+### Java      
+  - package-ecosystem: maven
+    directory: "/Java"
+    target-branch: main
+    schedule:
+      interval: "weekly"
+      day: "friday"
+    assignees:
+      - sualeh
+  - package-ecosystem: maven
+    directory: "/Java"
+    target-branch: step1
+    schedule:
+      interval: "weekly"
+      day: "friday"
+    assignees:
+      - sualeh
+  - package-ecosystem: maven
+    directory: "/Java"
+    target-branch: step2
+    schedule:
+      interval: "weekly"
+      day: "friday"
+    assignees:
+      - sualeh
+  - package-ecosystem: maven
+    directory: "/Java"
+    target-branch: step3
+    schedule:
+      interval: "weekly"
+      day: "friday"
+    assignees:
+      - sualeh
+  - package-ecosystem: maven
+    directory: "/Java"
+    target-branch: step4
+    schedule:
+      interval: "weekly"
+      day: "friday"
+    assignees:
+      - sualeh
+      
+##### C#       
+  - package-ecosystem: nuget
+    directory: "/C#"
+    target-branch: main
+    schedule:
+      interval: "weekly"
+      day: "friday"
+    assignees:
+      - sualeh
+      - nikhiltjha 
+  - package-ecosystem: nuget
+    directory: "/C#"
+    target-branch: step1
+    schedule:
+      interval: "weekly"
+      day: "friday"
+    assignees:
+      - sualeh
+      - nikhiltjha 
+  - package-ecosystem: nuget
+    directory: "/C#"
+    target-branch: step2
+    schedule:
+      interval: "weekly"
+      day: "friday"
+    assignees:
+      - sualeh
+      - nikhiltjha 
+  - package-ecosystem: nuget
+    directory: "/C#"
+    target-branch: step3
+    schedule:
+      interval: "weekly"
+      day: "friday"
+    assignees:
+      - sualeh
+      - nikhiltjha 
+  - package-ecosystem: nuget
+    directory: "/C#"
+    target-branch: step4
+    schedule:
+      interval: "weekly"
+      day: "friday"
+    assignees:
+      - sualeh
+      - nikhiltjha 
