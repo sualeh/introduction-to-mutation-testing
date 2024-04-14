@@ -12,6 +12,6 @@ This tutorial explores how mutation testing works. We will do test-driven develo
 
 *Expected time to complete tutorial: 30 minutes*
 
-## Step 2
+## Step 1
 
-In **Step 2** we will write unit tests. Please refer to the README files in the C# or the Java folders.
+In **Step 1** we will write unit tests. Please refer to the README files in the C# or the Java folders.
