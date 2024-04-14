@@ -12,13 +12,13 @@ namespace us.fatehi.palindrome.test
         [Test]
         public void BoundaryConditionHappy()
         {
-            Assert.IsTrue(_p.IsPalindrome("oo"));
+            Assert.That(_p.IsPalindrome("oo"));
         }
 
         [Test]
         public void BoundaryConditionNegative()
         {
-            Assert.IsFalse(_p.IsPalindrome("ah"));
+            Assert.That(_p.IsPalindrome("ah"), Is.False);
         }
     }
 }

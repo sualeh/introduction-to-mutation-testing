@@ -12,7 +12,7 @@ namespace us.fatehi.palindrome.test
         [Test]
         public void AlmostPalindrome()
         {
-            Assert.IsFalse(_p.IsPalindrome("polyp"));
+            Assert.That(_p.IsPalindrome("polyp"), Is.False);
         }
     }
 }
