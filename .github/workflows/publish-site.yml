@@ -37,7 +37,7 @@ jobs:
         scoop install marp
         marp -v
         # Generate slides
-        marp --allow-local-files --html -I ./src/main/slides/ -o ./bin/slides --pdf
+        marp --allow-local-files --html -I ./Slides/ -o ./Slides/bin --pdf
 
     - id: configure-pages
       name: Setup Pages
@@ -47,7 +47,7 @@ jobs:
       name: Upload artifact
       uses: actions/upload-pages-artifact@v3
       with:
-        path: ./bin/slides
+        path: ./Slides/bin
 
 
   deploy:
