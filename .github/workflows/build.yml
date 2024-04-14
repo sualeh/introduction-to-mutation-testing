@@ -18,10 +18,11 @@ jobs:
       uses: sualeh/prepare-maven-build@v1.4.0
       with:
         checkout-branch: main
-    - id: build
+    - id: build-java
       name: Build
       run: |
         # Build
+        cd Java
         mvn \
           --no-transfer-progress \
           --batch-mode \
@@ -35,10 +36,11 @@ jobs:
       uses: sualeh/prepare-maven-build@v1.4.0
       with:
         checkout-branch: step1
-    - id: build
+    - id: build-java
       name: Build
       run: |
         # Build
+        cd Java
         mvn \
           --no-transfer-progress \
           --batch-mode \
@@ -52,10 +54,11 @@ jobs:
       uses: sualeh/prepare-maven-build@v1.4.0
       with:
         checkout-branch: step2
-    - id: build
+    - id: build-java
       name: Build and run tests
       run: |
         # Build and run tests
+        cd Java
         mvn \
           --no-transfer-progress \
           --batch-mode \
@@ -69,10 +72,11 @@ jobs:
       uses: sualeh/prepare-maven-build@v1.4.0
       with:
         checkout-branch: step3
-    - id: build
+    - id: build-java
       name: Build and run tests
       run: |
         # Build and run tests
+        cd Java
         mvn \
           --no-transfer-progress \
           --batch-mode \
@@ -86,10 +90,11 @@ jobs:
       uses: sualeh/prepare-maven-build@v1.4.0
       with:
         checkout-branch: step4
-    - id: build
+    - id: build-java
       name: Build and run tests
       run: |
         # Build and run tests
+        cd Java
         mvn \
           --no-transfer-progress \
           --batch-mode \
