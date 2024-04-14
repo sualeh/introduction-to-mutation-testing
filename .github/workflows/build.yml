@@ -27,6 +27,18 @@ jobs:
           --no-transfer-progress \
           --batch-mode \
           compile
+    - id: prepare-dotnet-build
+      name: Setup dotnet
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 8.x
+    - id: build-dotnet
+      name: .NET build and run tests
+      run: |
+        # C# build and run tests
+        cd C#
+        dotnet build
+
   build-step1:
     name: Build "step1"
     runs-on: ubuntu-latest
@@ -45,6 +57,18 @@ jobs:
           --no-transfer-progress \
           --batch-mode \
           compile
+    - id: prepare-dotnet-build
+      name: Setup dotnet
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 8.x
+    - id: build-dotnet
+      name: .NET build and run tests
+      run: |
+        # C# build and run tests
+        cd C#
+        dotnet build
+
   build-step2:
     name: Build "step2"
     runs-on: ubuntu-latest
@@ -63,6 +87,19 @@ jobs:
           --no-transfer-progress \
           --batch-mode \
           test
+    - id: prepare-dotnet-build
+      name: Setup dotnet
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 8.x
+    - id: build-dotnet
+      name: .NET build and run tests
+      run: |
+        # C# build and run tests
+        cd C#
+        dotnet build
+        dotnet test
+
   build-step3:
     name: Build "step3"
     runs-on: ubuntu-latest
@@ -81,6 +118,19 @@ jobs:
           --no-transfer-progress \
           --batch-mode \
           test
+    - id: prepare-dotnet-build
+      name: Setup dotnet
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 8.x
+    - id: build-dotnet
+      name: .NET build and run tests
+      run: |
+        # C# build and run tests
+        cd C#
+        dotnet build
+        dotnet test
+
   build-step4:
     name: Build "step4"
     runs-on: ubuntu-latest
