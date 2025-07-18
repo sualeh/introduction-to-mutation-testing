@@ -15,7 +15,7 @@ jobs:
     steps:
     - id: prepare-java-build
       name: Prepare Maven build
-      uses: sualeh/prepare-maven-build@v1.4.0
+      uses: sualeh/prepare-maven-build@v1.6.1
       with:
         checkout-branch: main
     - id: build-java
@@ -46,7 +46,7 @@ jobs:
     steps:
     - id: prepare-java-build
       name: Prepare Maven build
-      uses: sualeh/prepare-maven-build@v1.4.0
+      uses: sualeh/prepare-maven-build@v1.6.1
       with:
         checkout-branch: step1
     - id: build-java
@@ -77,7 +77,7 @@ jobs:
     steps:
     - id: prepare-java-build
       name: Prepare Maven build
-      uses: sualeh/prepare-maven-build@v1.4.0
+      uses: sualeh/prepare-maven-build@v1.6.1
       with:
         checkout-branch: step2
     - id: build-java
@@ -109,7 +109,7 @@ jobs:
     steps:
     - id: prepare-java-build
       name: Prepare Maven build
-      uses: sualeh/prepare-maven-build@v1.4.0
+      uses: sualeh/prepare-maven-build@v1.6.1
       with:
         checkout-branch: step3
     - id: build-java
@@ -141,7 +141,7 @@ jobs:
     steps:
     - id: prepare-java-build
       name: Prepare Maven build
-      uses: sualeh/prepare-maven-build@v1.4.0
+      uses: sualeh/prepare-maven-build@v1.6.1
       with:
         checkout-branch: step4
     - id: build-java
