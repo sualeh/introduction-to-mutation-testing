@@ -49,6 +49,7 @@ jobs:
       name: Prepare Maven build
       uses: sualeh/prepare-maven-build@v1.6.1
       with:
+        java-version: 21
         checkout-branch: step1
     - id: build-java
       name: Java build and run tests
@@ -80,6 +81,7 @@ jobs:
       name: Prepare Maven build
       uses: sualeh/prepare-maven-build@v1.6.1
       with:
+        java-version: 21
         checkout-branch: step2
     - id: build-java
       name: Java build and run tests
@@ -112,6 +114,7 @@ jobs:
       name: Prepare Maven build
       uses: sualeh/prepare-maven-build@v1.6.1
       with:
+        java-version: 21
         checkout-branch: step3
     - id: build-java
       name: Java build and run tests
@@ -144,6 +147,7 @@ jobs:
       name: Prepare Maven build
       uses: sualeh/prepare-maven-build@v1.6.1
       with:
+        java-version: 21
         checkout-branch: step4
     - id: build-java
       name: Java build and run tests
