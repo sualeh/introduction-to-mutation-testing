@@ -17,6 +17,7 @@ jobs:
       name: Prepare Maven build
       uses: sualeh/prepare-maven-build@v1.6.1
       with:
+        java-version: 21
         checkout-branch: main
     - id: build-java
       name: Java build and run tests
