@@ -5,7 +5,7 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
       day: "friday"
     assignees:
       - sualeh
@@ -15,7 +15,7 @@ updates:
     directory: "/Java"
     target-branch: main
     schedule:
-      interval: "weekly"
+      interval: "monthly"
       day: "friday"
     assignees:
       - sualeh
@@ -23,7 +23,7 @@ updates:
     directory: "/Java"
     target-branch: step1
     schedule:
-      interval: "weekly"
+      interval: "monthly"
       day: "friday"
     assignees:
       - sualeh
@@ -31,7 +31,7 @@ updates:
     directory: "/Java"
     target-branch: step2
     schedule:
-      interval: "weekly"
+      interval: "monthly"
       day: "friday"
     assignees:
       - sualeh
@@ -39,7 +39,7 @@ updates:
     directory: "/Java"
     target-branch: step3
     schedule:
-      interval: "weekly"
+      interval: "monthly"
       day: "friday"
     assignees:
       - sualeh
@@ -47,7 +47,7 @@ updates:
     directory: "/Java"
     target-branch: step4
     schedule:
-      interval: "weekly"
+      interval: "monthly"
       day: "friday"
     assignees:
       - sualeh
@@ -57,7 +57,7 @@ updates:
     directory: "/C#"
     target-branch: main
     schedule:
-      interval: "weekly"
+      interval: "monthly"
       day: "friday"
     assignees:
       - sualeh
@@ -66,7 +66,7 @@ updates:
     directory: "/C#"
     target-branch: step1
     schedule:
-      interval: "weekly"
+      interval: "monthly"
       day: "friday"
     assignees:
       - sualeh
@@ -75,7 +75,7 @@ updates:
     directory: "/C#"
     target-branch: step2
     schedule:
-      interval: "weekly"
+      interval: "monthly"
       day: "friday"
     assignees:
       - sualeh
@@ -84,7 +84,7 @@ updates:
     directory: "/C#"
     target-branch: step3
     schedule:
-      interval: "weekly"
+      interval: "monthly"
       day: "friday"
     assignees:
       - sualeh
@@ -93,7 +93,7 @@ updates:
     directory: "/C#"
     target-branch: step4
     schedule:
-      interval: "weekly"
+      interval: "monthly"
       day: "friday"
     assignees:
       - sualeh
