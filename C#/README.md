@@ -2,14 +2,12 @@
 
 # Introduction to Mutation Testing
 
-## Step 1
+This directory contains the C# version of the tutorial. Since the walkthrough changes from branch to branch, use the README that matches the branch you are presenting from:
 
-Let us start by writing a simple palindrome test. A palindrome is a word or sentence that reads the same backwards and forwards, for example, "noon". Let us do test driven development, and follow industry best practices. 
+- [`README.1.md`](README.1.md) - `main`
+- [`README.2.md`](README.2.md) - `step1`
+- [`README.3.md`](README.3.md) - `step2`
+- [`README.4.md`](README.4.md) - `step3`
+- [`README.5.md`](README.5.md) - `step4`
 
-We will start by writing the unit tests first. Please take a look at [`PalindromeTest.java`](https://github.com/sualeh/introduction-to-mutation-testing/blob/master/src/test/java/us/fatehi/palindrome/PalindromeTest.java). There are tests for edge cases, and we consider *null* to be a palindrome for this purpose. There are edge condition tests for an empty string, and a word with a single letter. There is a happy path test for "noon", and a negative test for "morning" which is not a palindrome.
-
-Download the code, and run it with `mvn clean test`. You will notice that all our tests are failing because the code has not been implemented yet. In the next step, we will implement the code, and get the tests to pass.
-
-## Move to Step 2
-
-In order to move to Step 2, switch to git branch "step2" by running `git switch step2`. Then follow instructions in the README.
+The `main` and `step1` branches start from the same teaching point, so their walkthroughs are intentionally very similar.
