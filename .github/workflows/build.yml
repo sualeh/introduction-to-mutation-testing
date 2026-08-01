@@ -30,7 +30,7 @@ jobs:
           compile
     - id: prepare-dotnet-build
       name: Prepare .NET build
-      uses: actions/setup-dotnet@v5
+      uses: actions/setup-dotnet@v6
       with:
         dotnet-version: 8.x
     - id: build-dotnet
@@ -62,7 +62,7 @@ jobs:
           compile
     - id: prepare-dotnet-build
       name: Prepare .NET build
-      uses: actions/setup-dotnet@v5
+      uses: actions/setup-dotnet@v6
       with:
         dotnet-version: 8.x
     - id: build-dotnet
@@ -94,7 +94,7 @@ jobs:
           test
     - id: prepare-dotnet-build
       name: Prepare .NET build
-      uses: actions/setup-dotnet@v5
+      uses: actions/setup-dotnet@v6
       with:
         dotnet-version: 8.x
     - id: build-dotnet
@@ -127,7 +127,7 @@ jobs:
           test
     - id: prepare-dotnet-build
       name: Prepare .NET build
-      uses: actions/setup-dotnet@v5
+      uses: actions/setup-dotnet@v6
       with:
         dotnet-version: 8.x
     - id: build-dotnet
@@ -160,7 +160,7 @@ jobs:
           test
     - id: prepare-dotnet-build
       name: Prepare .NET build
-      uses: actions/setup-dotnet@v5
+      uses: actions/setup-dotnet@v6
       with:
         dotnet-version: 8.x
     - id: build-dotnet
