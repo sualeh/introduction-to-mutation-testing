@@ -32,7 +32,7 @@ jobs:
       name: Prepare .NET build
       uses: actions/setup-dotnet@v6
       with:
-        dotnet-version: 8.x
+        dotnet-version: 10.x
     - id: build-dotnet
       name: .NET build and run tests
       run: |
@@ -64,7 +64,7 @@ jobs:
       name: Prepare .NET build
       uses: actions/setup-dotnet@v6
       with:
-        dotnet-version: 8.x
+        dotnet-version: 10.x
     - id: build-dotnet
       name: .NET build and run tests
       run: |
@@ -96,7 +96,7 @@ jobs:
       name: Prepare .NET build
       uses: actions/setup-dotnet@v6
       with:
-        dotnet-version: 8.x
+        dotnet-version: 10.x
     - id: build-dotnet
       name: .NET build and run tests
       run: |
@@ -129,7 +129,7 @@ jobs:
       name: Prepare .NET build
       uses: actions/setup-dotnet@v6
       with:
-        dotnet-version: 8.x
+        dotnet-version: 10.x
     - id: build-dotnet
       name: .NET build and run tests
       run: |
@@ -162,7 +162,7 @@ jobs:
       name: Prepare .NET build
       uses: actions/setup-dotnet@v6
       with:
-        dotnet-version: 8.x
+        dotnet-version: 10.x
     - id: build-dotnet
       name: .NET build and run tests
       run: |
