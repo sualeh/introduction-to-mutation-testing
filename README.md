@@ -1,5 +1,3 @@
-> **:star: Star it :arrow_heading_up: if you love it!**
-
 # Introduction to Mutation Testing
 
 **Disclaimer:** This code is deliberately contrived to demonstrate mutation testing. Special cases, such as Unicode text handling and stack overflows from deep recursion, are intentionally excluded from the tests to keep the examples easy to understand.
