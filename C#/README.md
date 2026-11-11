@@ -8,7 +8,25 @@ Looking at the results in `target/stryker/reports/mutation-report.html` in a bro
 
 We can remedy that by testing words **at** the boundary - those that are two characters long. Let us add tests for "oo" and "ah", where one word is a palindrome, and the other one is not. Take a look at [`BetterPalindromeTest.cs`](TestPalindrome/BetterPalindromeTest.cs).
 
-With the .NET 10 SDK installed, run `dotnet test Palindrome.sln` from the `C#` directory. All nine tests will pass. Using Stryker.NET 5.1.0 installed in Step 3, run `dotnet stryker --solution Palindrome.sln --output target\stryker`. On Windows ARM64, first run `$env:PlatformTarget = 'ARM64'` in the same PowerShell session. On macOS or Linux, use `/` instead of `\` in the command path.
+With the .NET 10 SDK installed, run this from the `C#` directory. All nine tests will pass.
+
+```powershell
+dotnet test Palindrome.sln
+```
+
+Using Stryker.NET 5.1.0 installed in Step 3, run this command. On Windows ARM64, first set `PlatformTarget` in the same PowerShell session. On macOS or Linux, use `/` instead of `\` in the command path.
+
+```powershell
+dotnet stryker `
+  --solution Palindrome.sln `
+  --output target\stryker
+```
+
+On Windows ARM64, run this in the same PowerShell session before running Stryker:
+
+```powershell
+$env:PlatformTarget = 'ARM64'
+```
 
 Open this branch's `target/stryker/reports/mutation-report.html` in a browser. All eight tested mutants are killed, and the mutation score is 100%. This means the tests catch all mutations tested in this run, not that they prove the absence of every possible bug.
 
