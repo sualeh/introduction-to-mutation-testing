@@ -1,173 +1,30 @@
-name: Build All Branches
+name: Build Java
 
 on:
-  workflow_dispatch:
   push:
+    branches: ['java/**']
+  pull_request:
+    branches: ['java/**']
+  workflow_dispatch:
+
+permissions:
+  contents: read
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  build-main:
-    name: Build "main"
+  build:
     runs-on: ubuntu-latest
     steps:
-    - id: prepare-java-build
-      name: Prepare Maven build
-      uses: sualeh/prepare-maven-build@v1.8.2
-      with:
-        java-version: 25
-        checkout-branch: main
-    - id: build-java
-      name: Java build and run tests
-      run: |
-        # Java build and run tests
-        cd Java
-        ./mvnw \
-          --no-transfer-progress \
-          --batch-mode \
-          compile
-    - id: prepare-dotnet-build
-      name: Prepare .NET build
-      uses: actions/setup-dotnet@v6
-      with:
-        dotnet-version: 10.x
-    - id: build-dotnet
-      name: .NET build and run tests
-      run: |
-        # .NET build and run tests
-        cd C#
-        dotnet build
-        dotnet test --list-tests
-
-  build-step1:
-    name: Build "step1"
-    runs-on: ubuntu-latest
-    steps:
-    - id: prepare-java-build
-      name: Prepare Maven build
-      uses: sualeh/prepare-maven-build@v1.8.2
-      with:
-        java-version: 25
-        checkout-branch: step1
-    - id: build-java
-      name: Java build and run tests
-      run: |
-        # Java build and run tests
-        cd Java
-        ./mvnw \
-          --no-transfer-progress \
-          --batch-mode \
-          compile
-    - id: prepare-dotnet-build
-      name: Prepare .NET build
-      uses: actions/setup-dotnet@v6
-      with:
-        dotnet-version: 10.x
-    - id: build-dotnet
-      name: .NET build and run tests
-      run: |
-        # .NET build and run tests
-        cd C#
-        dotnet build
-        dotnet test --list-tests
-
-  build-step2:
-    name: Build "step2"
-    runs-on: ubuntu-latest
-    steps:
-    - id: prepare-java-build
-      name: Prepare Maven build
-      uses: sualeh/prepare-maven-build@v1.8.2
-      with:
-        java-version: 25
-        checkout-branch: step2
-    - id: build-java
-      name: Java build and run tests
-      run: |
-        # Java build and run tests
-        cd Java
-        ./mvnw \
-          --no-transfer-progress \
-          --batch-mode \
-          test
-    - id: prepare-dotnet-build
-      name: Prepare .NET build
-      uses: actions/setup-dotnet@v6
-      with:
-        dotnet-version: 10.x
-    - id: build-dotnet
-      name: .NET build and run tests
-      run: |
-        # .NET build and run tests
-        cd C#
-        dotnet build
-        dotnet test --list-tests
-        dotnet test
-
-  build-step3:
-    name: Build "step3"
-    runs-on: ubuntu-latest
-    steps:
-    - id: prepare-java-build
-      name: Prepare Maven build
-      uses: sualeh/prepare-maven-build@v1.8.2
-      with:
-        java-version: 25
-        checkout-branch: step3
-    - id: build-java
-      name: Java build and run tests
-      run: |
-        # Java build and run tests
-        cd Java
-        ./mvnw \
-          --no-transfer-progress \
-          --batch-mode \
-          test
-    - id: prepare-dotnet-build
-      name: Prepare .NET build
-      uses: actions/setup-dotnet@v6
-      with:
-        dotnet-version: 10.x
-    - id: build-dotnet
-      name: .NET build and run tests
-      run: |
-        # .NET build and run tests
-        cd C#
-        dotnet build
-        dotnet test --list-tests
-        dotnet test
-
-  build-step4:
-    name: Build "step4"
-    runs-on: ubuntu-latest
-    steps:
-    - id: prepare-java-build
-      name: Prepare Maven build
-      uses: sualeh/prepare-maven-build@v1.8.2
-      with:
-        java-version: 25
-        checkout-branch: step4
-    - id: build-java
-      name: Java build and run tests
-      run: |
-        # Java build and run tests
-        cd Java
-        ./mvnw \
-          --no-transfer-progress \
-          --batch-mode \
-          test
-    - id: prepare-dotnet-build
-      name: Prepare .NET build
-      uses: actions/setup-dotnet@v6
-      with:
-        dotnet-version: 10.x
-    - id: build-dotnet
-      name: .NET build and run tests
-      run: |
-        # .NET build and run tests
-        cd C#
-        dotnet build
-        dotnet test --list-tests
-        dotnet test
+      - name: Prepare Maven build
+        uses: sualeh/prepare-maven-build@v1.8.2
+        with:
+          java-version: 25
+      - name: Compile intentionally incomplete examples
+        if: contains(fromJSON('["java/main", "java/step1"]'), github.base_ref || github.ref_name)
+        run: ./mvnw --no-transfer-progress --batch-mode test-compile
+      - name: Run tests
+        if: ${{ !contains(fromJSON('["java/main", "java/step1"]'), github.base_ref || github.ref_name) }}
+        run: ./mvnw --no-transfer-progress --batch-mode test
