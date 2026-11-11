@@ -2,6 +2,8 @@
 
 # Introduction to Mutation Testing
 
+**Disclaimer:** This code is deliberately contrived to demonstrate mutation testing. Special cases, such as Unicode text handling and stack overflows from deep recursion, are intentionally excluded from the tests to keep the examples easy to understand.
+
 ## Step 2
 
 In Step 2, we have implemented the palindrome function. Please take a look at [`Palindrome.java`](https://github.com/sualeh/introduction-to-mutation-testing/blob/step2/src/main/java/us/fatehi/palindrome/Palindrome.java). Run this from the `Java` directory, and all the tests will pass.
