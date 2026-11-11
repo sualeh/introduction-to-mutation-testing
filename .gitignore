@@ -24,6 +24,7 @@ bin/
 *.png
 
 target/
+artifacts/
 workspace/
 
 pom.xml.tag
