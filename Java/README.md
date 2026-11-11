@@ -2,6 +2,8 @@
 
 # Introduction to Mutation Testing
 
+**Disclaimer:** This code is deliberately contrived to demonstrate mutation testing. Special cases, such as Unicode text handling and stack overflows from deep recursion, are intentionally excluded from the tests to keep the examples easy to understand.
+
 ## Step 3
 
 In Step 3, we have added an additional test to covert the missed logic branches. The missing case is where `(firstChar == lastChar) && isPalindrome(center)` is `true && true` meaning that both the first and last characters of the word under test should match, but the next recursion of the function should also match the first and last characters. An example word is "streets", where "st" and "ts" are the reversals of each other. Please take a look at the new test [`MorePalindromeTest.java`](https://github.com/sualeh/introduction-to-mutation-testing/blob/step3/src/test/java/us/fatehi/palindrome/MorePalindromeTest.java). 

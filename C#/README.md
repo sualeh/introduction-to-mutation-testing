@@ -2,6 +2,8 @@
 
 # Introduction to Mutation Testing
 
+**Disclaimer:** This code is deliberately contrived to demonstrate mutation testing. Special cases, such as Unicode text handling and stack overflows from deep recursion, are intentionally excluded from the tests to keep the examples easy to understand.
+
 ## Step 3
 
 In Step 3, we have added a test for the missing branch: the first and last characters match, but the middle is not a palindrome. An example word is "polyp", whose middle is "oly". Please take a look at the new test [`MorePalindromeTest.cs`](TestPalindrome/MorePalindromeTest.cs).
