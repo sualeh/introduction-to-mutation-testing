@@ -2,16 +2,25 @@
 
 # Introduction to Mutation Testing
 
-> **Watch a [video of this tutorial on YouTube](https://youtu.be/1ljrGdXuv_g).**
+**Disclaimer:** This code is deliberately contrived to demonstrate mutation testing. Special cases, such as Unicode text handling and stack overflows from deep recursion, are intentionally excluded from the tests to keep the examples easy to understand.
 
-Most developers are familiar with the concept of unit testing, and how this is useful to ensure validity of your code, and guard against bugs creeping up in the future. Java developers will typically use [JUnit](https://junit.org/junit5/) to write their unit tests, while C# developers would use [NUnit](https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-nunit). Many projects use test coverage tools such as [Jacoco](https://www.eclemma.org/jacoco/) to ensure that the code as written has tests to validate it. But how strong are the tests? Will they stand up against bugs introduced by future code changes? 
+## Starting Point
 
-[Mutation testing](https://en.wikipedia.org/wiki/Mutation_testing) helps ensure that that tests themselves are of high quality by introducing random bugs, or mutations, and checking if any of unit tests can catch the bug. While this concept has been around for a while, it is just recently that good tools are becoming available for this purpose. Examples of such tools are [PIT](https://pitest.org/) for Java and [Stryker](https://stryker-mutator.io/docs/stryker-net/introduction/) for C#.
+Let us start by writing a simple palindrome test. A palindrome is a word or sentence that reads the same backwards and forwards, for example, "noon". Let us do test driven development, and follow industry best practices.
 
-This tutorial explores how mutation testing works. We will do test-driven development of a simple palindrome function, and follow it through code coverage and mutation testing. A Java project with Apache Maven is provided with instructions for Java developers, and a C# solution too. Start by reading the [brief overview of mutation testing](https://sualeh.github.io/introduction-to-mutation-testing/mutation-testing.pdf) included in this tutorial. Read the README file in the corresponding Java or C# for instructions at each step.
+We will start by writing the unit test first. Please take a look at [`PalindromeTest.cs`](TestPalindrome/PalindromeTest.cs). On the dotnet/main branch, there is a single happy path test for "noon". The dotnet/step1 branch adds tests for edge cases.
 
-*Expected time to complete tutorial: 30 minutes*
+With the .NET 10 SDK installed, run this from the repository root. You will notice that the test fails with `NotImplementedException` because the code has not been implemented yet. In Step 1, we will add the edge-case tests before implementing the code in Step 2.
 
-## Step 1
+Before every run, clear the previous test results in `artifacts/TestResults`. Other reports are left untouched.
 
-In **Step 1** we will write unit tests. Please refer to the README files in the C# or the Java folders.
+```powershell
+if (Test-Path -LiteralPath 'artifacts\TestResults') {
+  Remove-Item -LiteralPath 'artifacts\TestResults' -Recurse -Force -ErrorAction Stop
+}
+dotnet test Palindrome.sln --results-directory artifacts\TestResults
+```
+
+## Move to Step 1
+
+In order to move to Step 1, switch to git branch "dotnet/step1" by running `git switch dotnet/step1`, or open its worktree if it is already checked out there. Then follow instructions in the README.
