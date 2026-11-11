@@ -1,0 +1,30 @@
+name: Build Java
+
+on:
+  push:
+    branches: ['java/**']
+  pull_request:
+    branches: ['java/**']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Prepare Maven build
+        uses: sualeh/prepare-maven-build@v1.8.2
+        with:
+          java-version: 25
+      - name: Compile intentionally incomplete examples
+        if: contains(fromJSON('["java/main", "java/step1"]'), github.base_ref || github.ref_name)
+        run: ./mvnw --no-transfer-progress --batch-mode test-compile
+      - name: Run tests
+        if: ${{ !contains(fromJSON('["java/main", "java/step1"]'), github.base_ref || github.ref_name) }}
+        run: ./mvnw --no-transfer-progress --batch-mode test
