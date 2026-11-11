@@ -14,7 +14,14 @@
             var firstChar = word[0];
             var lastChar = word[^1];
             var center = word[1..^1];
-            return (firstChar == lastChar) && IsPalindrome(center);
+            if (firstChar == lastChar)
+            {
+                if (IsPalindrome(center))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }
