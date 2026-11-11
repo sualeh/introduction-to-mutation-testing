@@ -12,13 +12,13 @@ We will start by writing the unit test first. Please take a look at [`Palindrome
 
 With the .NET 10 SDK installed, run this from the `C#` directory. You will notice that the test fails with `NotImplementedException` because the code has not been implemented yet. In the next step, we will implement the code, and get the tests to pass.
 
-Before every run, clear the generated results in `target` so that reports contain only results from the current run.
+Before every run, clear the previous test results in `artifacts/TestResults`. Other reports are left untouched.
 
 ```powershell
-if (Test-Path -LiteralPath 'target') {
-  Remove-Item -LiteralPath 'target' -Recurse -Force -ErrorAction Stop
+if (Test-Path -LiteralPath 'artifacts\TestResults') {
+  Remove-Item -LiteralPath 'artifacts\TestResults' -Recurse -Force -ErrorAction Stop
 }
-dotnet test Palindrome.sln --results-directory target\TestResults
+dotnet test Palindrome.sln --results-directory artifacts\TestResults
 ```
 
 ## Move to Step 2
