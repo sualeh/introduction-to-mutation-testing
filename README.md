@@ -1,5 +1,3 @@
-> **:star: Star it :arrow_heading_up: if you love it!**
-
 # Introduction to Mutation Testing
 
 **Disclaimer:** This code is deliberately contrived to demonstrate mutation testing. Special cases, such as Unicode text handling and stack overflows from deep recursion, are intentionally excluded from the tests to keep the examples easy to understand.
@@ -21,8 +19,7 @@ So, we are done? Not so fast! This is where mutation testing comes in to show us
 Let us run PIT, and check the results. Run this from the repository root. Then open the results in `./target/pit-reports/index.html` in a browser. PIT shows 100% test coverage, but only 89% mutation test coverage. Let us explore and fix this.
 
 ```shell
-./mvnw clean test \
-  org.pitest:pitest-maven:mutationCoverage
+./mvnw clean test org.pitest:pitest-maven:mutationCoverage
 ```
 
 If you dig further, you will find that not all mutations were killed by tests. We are clearly missing a test condition. If you look at the report for line #9, you will see that when the conditional boundary was changed, no tests failed.
