@@ -1,5 +1,3 @@
-> **:star: Star it :arrow_heading_up: if you love it!**
-
 # Introduction to Mutation Testing
 
 **Disclaimer:** This code is deliberately contrived to demonstrate mutation testing. Special cases, such as Unicode text handling and stack overflows from deep recursion, are intentionally excluded from the tests to keep the examples easy to understand.
@@ -15,8 +13,7 @@ We can remedy that by testing words **at** the boundary - those that are two cha
 Run PIT again from the repository root, and look at the results in `./target/pit-reports/index.html` in a browser. All tested mutants are killed. This does not prove the absence of every possible bug.
 
 ```shell
-./mvnw clean test \
-  org.pitest:pitest-maven:mutationCoverage
+./mvnw clean test org.pitest:pitest-maven:mutationCoverage
 ```
 
 Hopefully, this tutorial gave you an idea of how you can write well-constructed unit tests that will save you from bugs as you evolve your code base.
