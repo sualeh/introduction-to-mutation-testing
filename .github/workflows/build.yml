@@ -1,0 +1,34 @@
+name: Build .NET
+
+on:
+  push:
+    branches: ['dotnet/**']
+  pull_request:
+    branches: ['dotnet/**']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout example
+        uses: actions/checkout@v7
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: 10.x
+      - name: Build solution
+        run: dotnet build Palindrome.sln
+      - name: Discover intentionally failing tests
+        if: contains(fromJSON('["dotnet/main", "dotnet/step1"]'), github.base_ref || github.ref_name)
+        run: dotnet test Palindrome.sln --no-build --list-tests
+      - name: Run tests
+        if: ${{ !contains(fromJSON('["dotnet/main", "dotnet/step1"]'), github.base_ref || github.ref_name) }}
+        run: dotnet test Palindrome.sln --no-build
