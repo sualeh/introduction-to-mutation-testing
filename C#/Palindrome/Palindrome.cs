@@ -2,7 +2,7 @@
 {
     public class Palindrome
     {
-        public bool IsPalindrome(string word)
+        public bool IsPalindrome(string? word)
         {
             throw new NotImplementedException("TODO");
         }

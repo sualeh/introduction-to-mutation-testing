@@ -8,7 +8,11 @@ Let us start by writing a simple palindrome test. A palindrome is a word or sent
 
 We will start by writing the unit test first. Please take a look at [`PalindromeTest.cs`](TestPalindrome/PalindromeTest.cs). On the main branch, there is a single happy path test for "noon". The step1 branch adds tests for edge cases.
 
-With the .NET 10 SDK installed, run `dotnet test Palindrome.sln` from the `C#` directory. You will notice that the test fails with `NotImplementedException` because the code has not been implemented yet. In the next step, we will implement the code, and get the tests to pass.
+With the .NET 10 SDK installed, run this from the `C#` directory. You will notice that the test fails with `NotImplementedException` because the code has not been implemented yet. In the next step, we will implement the code, and get the tests to pass.
+
+```powershell
+dotnet test Palindrome.sln
+```
 
 ## Move to Step 2
 
