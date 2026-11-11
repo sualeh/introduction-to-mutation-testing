@@ -2,7 +2,7 @@
 {
     public class Palindrome
     {
-        public bool IsPalindrome(string word)
+        public bool IsPalindrome(string? word)
         {
             // Exit early for trivial cases, such as null,
             // empty string, and a word with a single letter

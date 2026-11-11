@@ -4,13 +4,29 @@
 
 ## Step 2
 
-In Step 2, we have implemented the palindrome function. Please take a look at [`Palindrome.cs`](Palindrome/Palindrome.cs). With the .NET 10 SDK installed, run `dotnet test Palindrome.sln` from the `C#` directory. All six tests will pass.
-
-In fact, we have done a pretty good job of covering edge cases, and so let us check our test coverage. If ReportGenerator is not already installed, install it once with `dotnet tool install --global dotnet-reportgenerator-globaltool --version 5.6.0`. From the `C#` directory, collect coverage with Coverlet and generate an HTML report:
+In Step 2, we have implemented the palindrome function. Please take a look at [`Palindrome.cs`](Palindrome/Palindrome.cs). With the .NET 10 SDK installed, run this from the `C#` directory. All six tests will pass.
 
 ```powershell
-dotnet test Palindrome.sln --collect:"XPlat Code Coverage" --results-directory target\TestResults
-reportgenerator "-reports:target\TestResults\*\coverage.cobertura.xml" "-targetdir:target\coverage" "-reporttypes:Html"
+dotnet test Palindrome.sln
+```
+
+In fact, we have done a pretty good job of covering edge cases, and so let us check our test coverage. If ReportGenerator is not already installed, install it once:
+
+```powershell
+dotnet tool install --global dotnet-reportgenerator-globaltool --version 5.6.0
+```
+
+From the `C#` directory, collect coverage with Coverlet and generate an HTML report:
+
+```powershell
+dotnet test `
+  Palindrome.sln `
+  --collect:"XPlat Code Coverage" `
+  --results-directory target\TestResults
+reportgenerator `
+  "-reports:target\TestResults\*\coverage.cobertura.xml" `
+  "-targetdir:target\coverage" `
+  "-reporttypes:Html"
 ```
 
 Open `target/coverage/index.html` in a browser. Coverlet reports 100% line and branch coverage, unlike the Java coverage report at this step. On macOS or Linux, use `/` instead of `\` in the command paths.
