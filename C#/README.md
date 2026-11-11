@@ -4,21 +4,20 @@
 
 ## Step 2
 
-In Step 2, we have implemented the palindrome function. Please take a look at [`Palindrome.cs`](Palindrome/Palindrome.cs). With the .NET 10 SDK installed, run this from the `C#` directory. All six tests will pass.
+In Step 2, we have implemented the palindrome function. Please take a look at [`Palindrome.cs`](Palindrome/Palindrome.cs). Let us run the tests and check our coverage at the same time.
 
-```powershell
-dotnet test Palindrome.sln
-```
-
-In fact, we have done a pretty good job of covering edge cases, and so let us check our test coverage. If ReportGenerator is not already installed, install it once:
+With the .NET 10 SDK installed, install ReportGenerator once if it is not already installed:
 
 ```powershell
 dotnet tool install --global dotnet-reportgenerator-globaltool --version 5.6.0
 ```
 
-From the `C#` directory, collect coverage with Coverlet and generate an HTML report:
+From the `C#` directory, run the following in PowerShell. Clear the generated results in `target` before every run so that reports contain only results from the current run. All six tests will pass, and the same test run collects coverage:
 
 ```powershell
+if (Test-Path -LiteralPath 'target') {
+  Remove-Item -LiteralPath 'target' -Recurse -Force -ErrorAction Stop
+}
 dotnet test `
   Palindrome.sln `
   --collect:"XPlat Code Coverage" `
@@ -29,9 +28,9 @@ reportgenerator `
   "-reporttypes:Html"
 ```
 
-Open `target/coverage/index.html` in a browser. Coverlet reports 100% line and branch coverage, unlike the Java coverage report at this step. On macOS or Linux, use `/` instead of `\` in the command paths.
+Open `target/coverage/index.html` in a browser. Coverlet shows incomplete line and branch coverage. On macOS or Linux, use PowerShell and `/` instead of `\` in the command paths.
 
-However, do you notice a problem? We have not covered the full truth table for `(firstChar == lastChar) && IsPalindrome(center)`. We are missing the case where the outer letters match, but the middle is not a palindrome: `true && false`. The coverage percentage does not reveal this gap. It is time to add another test.
+If you dig deeper, you will find that the nested checks have not covered the case where the outer letters match, but the middle is not a palindrome: `true && false`. The inner `if (IsPalindrome(center))` has never taken its false branch. It is time to add another test.
 
 ## Move to Step 3
 
