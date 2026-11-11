@@ -3,12 +3,17 @@
     "editor.wrappingIndent": "indent",
     "editor.overviewRulerBorder": false,
     "editor.lineHeight": 24,
+    "editor.foldingImportsByDefault": true,
+    "window.zoomLevel": 1.2,
+    "editor.tabSize": 2,
     "[markdown]": {
+        "files.trimTrailingWhitespace": false,
         "editor.quickSuggestions": {
-            "comments": "on",
-            "strings": "on",
+            "comments": "off",
+            "strings": "off",
             "other": "on"
-        }
+        },
+        "editor.wordWrap": "bounded"
     },
     "workbench.editorAssociations": {
         "*.md": "vscode.markdown.preview.editor",

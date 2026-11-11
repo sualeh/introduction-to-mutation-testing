@@ -1,5 +1,3 @@
-> **:star: Star it :arrow_heading_up: if you love it!**
-
 # Introduction to Mutation Testing
 
 **Disclaimer:** This code is deliberately contrived to demonstrate mutation testing. Special cases, such as Unicode text handling and stack overflows from deep recursion, are intentionally excluded from the tests to keep the examples easy to understand.
@@ -11,7 +9,7 @@ In Step 2, we have implemented the palindrome function. Please take a look at [`
 With the .NET 10 SDK installed, install ReportGenerator once if it is not already installed:
 
 ```powershell
-dotnet tool install --global dotnet-reportgenerator-globaltool --version 5.6.0
+dotnet tool install --global dotnet-reportgenerator-globaltool
 ```
 
 From the repository root, run the following in PowerShell. Clear only the previous test results and coverage report before every run, leaving mutation reports untouched. All six tests will pass, and the same test run collects coverage:
