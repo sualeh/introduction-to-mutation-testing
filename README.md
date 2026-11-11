@@ -1,5 +1,3 @@
-> **:star: Star it :arrow_heading_up: if you love it!**
-
 # Introduction to Mutation Testing
 
 **Disclaimer:** This code is deliberately contrived to demonstrate mutation testing. Special cases, such as Unicode text handling and stack overflows from deep recursion, are intentionally excluded from the tests to keep the examples easy to understand.
@@ -30,7 +28,7 @@ reportgenerator `
 
 All nine tests pass. Open `artifacts/coverage/index.html` in a browser to see 100% line and branch coverage.
 
-Using Stryker.NET 5.1.0 installed in Step 3, clear only the previous mutation results and run it again, leaving the coverage report untouched. On Windows ARM64 only, first run `$env:PlatformTarget = 'ARM64'` in the same PowerShell session. On macOS or Linux, use PowerShell and `/` instead of `\` in the command paths.
+Using Stryker.NET installed in Step 3, clear only the previous mutation results and run it again, leaving the coverage report untouched. On Windows ARM64 only, first run `$env:PlatformTarget = 'ARM64'` in the same PowerShell session. On macOS or Linux, use PowerShell and `/` instead of `\` in the command paths.
 
 ```powershell
 if (Test-Path -LiteralPath 'artifacts\stryker') {
@@ -41,6 +39,6 @@ dotnet stryker `
   --output artifacts\stryker
 ```
 
-Open this branch's `artifacts/stryker/reports/mutation-report.html` in a browser. All ten tested mutants are killed, and the mutation score is 100%. This means the tests catch all mutations tested in this run, not that they prove the absence of every possible bug.
+Open this branch's `artifacts/stryker/reports/mutation-report.html` in a browser. All ten tested mutants are killed, and the mutation score is 100%. Exact mutation counts can vary between Stryker.NET releases. This means the tests catch all mutations tested in this run, not that they prove the absence of every possible bug.
 
 Hopefully, this tutorial gave you an idea of how you can write well-constructed unit tests that will save you from bugs as you evolve your code base.
