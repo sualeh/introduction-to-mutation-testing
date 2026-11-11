@@ -1,13 +1,18 @@
 {
 	"[markdown]": {
+		"files.trimTrailingWhitespace": false,
 		"editor.quickSuggestions": {
-			"comments": "on",
-			"strings": "on",
+			"comments": "off",
+			"strings": "off",
 			"other": "on"
-		}
+		},
+		"editor.wordWrap": "bounded"
 	},
 	"dotnet.defaultSolution": "C#/Palindrome.sln",
 	"editor.lineHeight": 24,
+	"editor.foldingImportsByDefault": true,
+	"window.zoomLevel": 1.2,
+	"editor.tabSize": 2,
 	"editor.minimap.enabled": false,
 	"editor.overviewRulerBorder": false,
 	"editor.wrappingIndent": "indent",
