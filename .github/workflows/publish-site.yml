@@ -2,6 +2,10 @@ name: Build and Deploy Slides
 
 on:
   push:
+    branches: [main]
+    paths:
+      - mutation-testing.md
+      - .github/workflows/publish-site.yml
   workflow_dispatch:
 
 permissions:
@@ -10,56 +14,40 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: true
 
 jobs:
   build:
     name: Build Slides
-    runs-on: windows-latest
-
+    runs-on: ubuntu-latest
     steps:
-
-    - id: checkout-code
-      name: Checkout
-      uses: actions/checkout@v7
-
-    - id: marp-build
-      name: Render Slides with Marp
-      shell: pwsh
-      run: |
-        # Install Scoop
-        Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-        iex "& {$(irm get.scoop.sh)} -RunAsAdmin"
-        scoop update
-        scoop -v
-        # Install Marp
-        scoop install marp
-        marp -v
-        # Generate slides
-        marp --allow-local-files --html -I ./Slides/ -o ./Slides/bin --pdf
-
-    - id: configure-pages
-      name: Setup Pages
-      uses: actions/configure-pages@v6
-
-    - id: upload-artifact
-      name: Upload artifact
-      uses: actions/upload-pages-artifact@v5
-      with:
-        path: ./Slides/bin
-
+      - name: Checkout slides
+        uses: actions/checkout@v7
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+      - name: Render slides with Marp
+        run: |
+          npx --yes @marp-team/marp-cli@latest --html mutation-testing.md --output artifacts/slides/index.html
+          npx --yes @marp-team/marp-cli@latest --html mutation-testing.md --pdf --output artifacts/slides/mutation-testing.pdf
+      - name: Set up Pages
+        uses: actions/configure-pages@v6
+      - name: Upload slides
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: artifacts/slides
 
   deploy:
     name: Deploy Website
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deploy-pages.outputs.page_url }}
     needs: build
-
     steps:
-
-    - id: deploy-pages
-      name: Deploy to GitHub Pages
-      uses: actions/deploy-pages@v5
+      - id: deploy-pages
+        name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v5

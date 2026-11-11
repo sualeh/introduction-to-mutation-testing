@@ -9,92 +9,174 @@ updates:
       day: "friday"
     assignees:
       - sualeh
-      
-### Java      
+
+### Java
   - package-ecosystem: maven
-    directory: "/Java"
-    target-branch: main
-    schedule:
-      interval: "monthly"
-      day: "friday"
-    assignees:
-      - sualeh
-  - package-ecosystem: maven
-    directory: "/Java"
-    target-branch: step1
+    directory: "/"
+    target-branch: java/main
     schedule:
       interval: "monthly"
       day: "friday"
     assignees:
       - sualeh
   - package-ecosystem: maven
-    directory: "/Java"
-    target-branch: step2
+    directory: "/"
+    target-branch: java/step1
     schedule:
       interval: "monthly"
       day: "friday"
     assignees:
       - sualeh
   - package-ecosystem: maven
-    directory: "/Java"
-    target-branch: step3
+    directory: "/"
+    target-branch: java/step2
     schedule:
       interval: "monthly"
       day: "friday"
     assignees:
       - sualeh
   - package-ecosystem: maven
-    directory: "/Java"
-    target-branch: step4
+    directory: "/"
+    target-branch: java/step3
     schedule:
       interval: "monthly"
       day: "friday"
     assignees:
       - sualeh
-      
-##### C#       
+  - package-ecosystem: maven
+    directory: "/"
+    target-branch: java/step4
+    schedule:
+      interval: "monthly"
+      day: "friday"
+    assignees:
+      - sualeh
+
+##### C#
   - package-ecosystem: nuget
-    directory: "/C#"
-    target-branch: main
+    directory: "/"
+    target-branch: dotnet/main
     schedule:
       interval: "monthly"
       day: "friday"
     assignees:
       - sualeh
-      - nikhiltjha 
+      - nikhiltjha
   - package-ecosystem: nuget
-    directory: "/C#"
-    target-branch: step1
+    directory: "/"
+    target-branch: dotnet/step1
     schedule:
       interval: "monthly"
       day: "friday"
     assignees:
       - sualeh
-      - nikhiltjha 
+      - nikhiltjha
   - package-ecosystem: nuget
-    directory: "/C#"
-    target-branch: step2
+    directory: "/"
+    target-branch: dotnet/step2
     schedule:
       interval: "monthly"
       day: "friday"
     assignees:
       - sualeh
-      - nikhiltjha 
+      - nikhiltjha
   - package-ecosystem: nuget
-    directory: "/C#"
-    target-branch: step3
+    directory: "/"
+    target-branch: dotnet/step3
     schedule:
       interval: "monthly"
       day: "friday"
     assignees:
       - sualeh
-      - nikhiltjha 
+      - nikhiltjha
   - package-ecosystem: nuget
-    directory: "/C#"
-    target-branch: step4
+    directory: "/"
+    target-branch: dotnet/step4
     schedule:
       interval: "monthly"
       day: "friday"
     assignees:
       - sualeh
-      - nikhiltjha 
+      - nikhiltjha
+
+### Language branch workflows
+  - package-ecosystem: github-actions
+    directory: "/"
+    target-branch: java/main
+    schedule:
+      interval: "monthly"
+      day: "friday"
+    assignees:
+      - sualeh
+  - package-ecosystem: github-actions
+    directory: "/"
+    target-branch: java/step1
+    schedule:
+      interval: "monthly"
+      day: "friday"
+    assignees:
+      - sualeh
+  - package-ecosystem: github-actions
+    directory: "/"
+    target-branch: java/step2
+    schedule:
+      interval: "monthly"
+      day: "friday"
+    assignees:
+      - sualeh
+  - package-ecosystem: github-actions
+    directory: "/"
+    target-branch: java/step3
+    schedule:
+      interval: "monthly"
+      day: "friday"
+    assignees:
+      - sualeh
+  - package-ecosystem: github-actions
+    directory: "/"
+    target-branch: java/step4
+    schedule:
+      interval: "monthly"
+      day: "friday"
+    assignees:
+      - sualeh
+  - package-ecosystem: github-actions
+    directory: "/"
+    target-branch: dotnet/main
+    schedule:
+      interval: "monthly"
+      day: "friday"
+    assignees:
+      - sualeh
+  - package-ecosystem: github-actions
+    directory: "/"
+    target-branch: dotnet/step1
+    schedule:
+      interval: "monthly"
+      day: "friday"
+    assignees:
+      - sualeh
+  - package-ecosystem: github-actions
+    directory: "/"
+    target-branch: dotnet/step2
+    schedule:
+      interval: "monthly"
+      day: "friday"
+    assignees:
+      - sualeh
+  - package-ecosystem: github-actions
+    directory: "/"
+    target-branch: dotnet/step3
+    schedule:
+      interval: "monthly"
+      day: "friday"
+    assignees:
+      - sualeh
+  - package-ecosystem: github-actions
+    directory: "/"
+    target-branch: dotnet/step4
+    schedule:
+      interval: "monthly"
+      day: "friday"
+    assignees:
+      - sualeh

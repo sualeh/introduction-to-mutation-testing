@@ -4,14 +4,78 @@
 
 > **Watch a [video of this tutorial on YouTube](https://youtu.be/1ljrGdXuv_g).**
 
-Most developers are familiar with the concept of unit testing, and how this is useful to ensure validity of your code, and guard against bugs creeping up in the future. Java developers will typically use [JUnit](https://junit.org/junit5/) to write their unit tests, while C# developers would use [NUnit](https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-nunit). Many projects use test coverage tools such as [Jacoco](https://www.eclemma.org/jacoco/) to ensure that the code as written has tests to validate it. But how strong are the tests? Will they stand up against bugs introduced by future code changes? 
+How strong are your unit tests? Mutation testing introduces small changes to your code and checks whether the tests catch them. This tutorial follows a palindrome implementation through unit testing, code coverage, and mutation testing with [PIT](https://pitest.org/) for Java and [Stryker.NET](https://stryker-mutator.io/docs/stryker-net/introduction/) for C#.
 
-[Mutation testing](https://en.wikipedia.org/wiki/Mutation_testing) helps ensure that that tests themselves are of high quality by introducing random bugs, or mutations, and checking if any of unit tests can catch the bug. While this concept has been around for a while, it is just recently that good tools are becoming available for this purpose. Examples of such tools are [PIT](https://pitest.org/) for Java and [Stryker](https://stryker-mutator.io/docs/stryker-net/introduction/) for C#.
+**Disclaimer:** This code is deliberately contrived to demonstrate mutation testing. Special cases, such as Unicode text handling and stack overflows from deep recursion, are intentionally excluded from the tests to keep the examples easy to understand.
 
-This tutorial explores how mutation testing works. We will do test-driven development of a simple palindrome function, and follow it through code coverage and mutation testing. A Java project with Apache Maven is provided with instructions for Java developers, and a C# solution too. Start by reading the [brief overview of mutation testing](https://sualeh.github.io/introduction-to-mutation-testing/mutation-testing.pdf) included in this tutorial. Read the README file in the corresponding Java or C# for instructions at each step.
+*Expected time to complete the tutorial: 30 minutes.*
 
-*Expected time to complete tutorial: 30 minutes*
+## Slides
 
-## Step 1
+The `main` branch contains the [slide source](mutation-testing.md), not the example projects. View the [published slides](https://sualeh.github.io/introduction-to-mutation-testing/) or download the [PDF](https://sualeh.github.io/introduction-to-mutation-testing/mutation-testing.pdf).
 
-In **Step 1** we will write unit tests. Please refer to the README files in the C# or the Java folders.
+## Choose a language
+
+Clone the repository once, then switch between the branches for your chosen language. Each example branch has its project and step-specific README in the repository root; there are no `Java` or `C#` subdirectories.
+
+```shell
+git clone https://github.com/sualeh/introduction-to-mutation-testing.git
+cd introduction-to-mutation-testing
+```
+
+| Tutorial stage | Java branch | C# branch | What to expect |
+| --- | --- | --- | --- |
+| Starting point | `java/main` | `dotnet/main` | One test and an unimplemented function; the test intentionally fails. |
+| Step 1 | `java/step1` | `dotnet/step1` | Six tests for an unimplemented function; they intentionally fail. |
+| Step 2 | `java/step2` | `dotnet/step2` | The implementation passes six tests, but coverage exposes a missing case. |
+| Step 3 | `java/step3` | `dotnet/step3` | Seven tests give full coverage, but mutation testing exposes a boundary case. |
+| Step 4 | `java/step4` | `dotnet/step4` | Nine tests kill all tested mutants. |
+
+### Java
+
+Install JDK 25. The checked-in Maven wrapper selects the Maven version. Run commands from the repository root; on Windows, use `.\mvnw.cmd` instead of `./mvnw`.
+
+```shell
+git switch java/main
+./mvnw clean test
+```
+
+The starting test intentionally fails. Continue through the branches below, following the root README on each branch for test, coverage, and mutation-testing commands:
+
+```shell
+git switch java/step1
+git switch java/step2
+git switch java/step3
+git switch java/step4
+```
+
+### C# / .NET
+
+Install the .NET 10 SDK. Run commands from the repository root:
+
+```powershell
+git switch dotnet/main
+dotnet test Palindrome.sln
+```
+
+The starting test intentionally fails. Continue through the branches below, following the root README on each branch. From Step 2 onward, one test run also collects coverage. The READMEs include ReportGenerator and Stryker.NET setup, output paths, and the Windows ARM64 setting.
+
+```powershell
+git switch dotnet/step1
+git switch dotnet/step2
+git switch dotnet/step3
+git switch dotnet/step4
+```
+
+Keep local edits committed or stashed before switching branches. If a branch is checked out in another worktree, open that worktree instead. Return to the slides with `git switch main`.
+
+## Build the slides locally
+
+With Node.js 24 installed, run these commands from `main`. PDF generation also requires Chrome, Edge, or Firefox:
+
+```powershell
+npx --yes @marp-team/marp-cli@latest --html mutation-testing.md --output artifacts\slides\index.html
+npx --yes @marp-team/marp-cli@latest --html mutation-testing.md --pdf --output artifacts\slides\mutation-testing.pdf
+```
+
+GitHub Actions builds every tutorial branch, respecting the intentionally incomplete starting stages. Language branches also validate their own changes. Slides are published to GitHub Pages only from `main`.
