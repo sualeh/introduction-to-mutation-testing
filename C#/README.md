@@ -14,23 +14,25 @@ With the .NET 10 SDK installed, install ReportGenerator once if it is not alread
 dotnet tool install --global dotnet-reportgenerator-globaltool --version 5.6.0
 ```
 
-From the `C#` directory, run the following in PowerShell. Clear the generated results in `target` before every run so that reports contain only results from the current run. All six tests will pass, and the same test run collects coverage:
+From the `C#` directory, run the following in PowerShell. Clear only the previous test results and coverage report before every run, leaving mutation reports untouched. All six tests will pass, and the same test run collects coverage:
 
 ```powershell
-if (Test-Path -LiteralPath 'target') {
-  Remove-Item -LiteralPath 'target' -Recurse -Force -ErrorAction Stop
+foreach ($directory in 'artifacts\TestResults', 'artifacts\coverage') {
+  if (Test-Path -LiteralPath $directory) {
+    Remove-Item -LiteralPath $directory -Recurse -Force -ErrorAction Stop
+  }
 }
 dotnet test `
   Palindrome.sln `
   --collect:"XPlat Code Coverage" `
-  --results-directory target\TestResults
+  --results-directory artifacts\TestResults
 reportgenerator `
-  "-reports:target\TestResults\*\coverage.cobertura.xml" `
-  "-targetdir:target\coverage" `
+  "-reports:artifacts\TestResults\*\coverage.cobertura.xml" `
+  "-targetdir:artifacts\coverage" `
   "-reporttypes:Html"
 ```
 
-Open `target/coverage/index.html` in a browser. Coverlet shows incomplete line and branch coverage. On macOS or Linux, use PowerShell and `/` instead of `\` in the command paths.
+Open `artifacts/coverage/index.html` in a browser. Coverlet shows incomplete line and branch coverage. On macOS or Linux, use PowerShell and `/` instead of `\` in the command paths.
 
 If you dig deeper, you will find that the nested checks have not covered the case where the outer letters match, but the middle is not a palindrome: `true && false`. The inner `if (IsPalindrome(center))` has never taken its false branch. It is time to add another test.
 
